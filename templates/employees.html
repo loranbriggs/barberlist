@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Employee Only Page
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    Here on this page you will be able to edit the employee list.
+    <ul>
+        <li> Blah </li>
+        {% for object in employees %}
+            <li> {{object.name}} {{object.available}} </li>
+        {% endfor %}
+    </ul>
+
+    <form class="well" method="post" action="./employees">
+         {% csrf_token %}
+         <input type="text" id="name" name="name" size="20"
+            placeholder="enter name">
+         <input type="submit" button class="btn btn-success" value="Add Name" name="submit">
+    </form>
+{% endblock %}
