@@ -8,30 +8,46 @@
 {% endblock %}
 
 {% block content %}
+
     <div class="row">
         <div class="span8 offset2">
-            <h1> BarberList </h1>
+            <h1>Hey Guys! You need to know this!!</h1>
+            <h3>We take our customers in order as they appear on the
+            waiting list.* <br> If you enter your name below, we will
+            add you to the waiting list. <br> If you don’t call ahead
+            or enter you name below, add your name<br> to the waiting list
+            when you arrive. <br>
+            <div class="trim"> *Courtesy neck trims and touch-ups always
+            receive priority service! (Annotated in red.)</div></h3>
+        </div>
+        <div class="span span4 offset4">
+            <form class="well" method="post" action=".">
+                {% csrf_token %}
+                <input type="text" id="name" name="name" size="20"
+                    placeholder="enter name">
+                <input type="submit" button class="btn btn-success" 
+                    value="Add Name" name="submit">
+            </form>
             <div class="row-fluid show-grid">
                 <div class="span6">
-                    <ul>
-                        <li>Fred</li>
-                        <li>Danny</li>
-                        <li>Tom</li>
-                        <li>Kenny</li>
-                    </ul>
+                    <ol>
+                            <li>LORAN</li>
+                        {% for object in customers %}
+                            <li>{{object.name}} </li>
+                        {% endfor %}
+                    </ol>
 
                 </div>
                 <div class="span6">
                     <ul>
-                        <li>John</li>
-                        <li>Phill</li>
-                        <li>John</li>
-                        <li>Phill</li>
+                            <li>JOHN</li>
+                        {% for object in customers %}
+                            <li>{{object.barber}} </li>
+                        {% endfor %}
                     </ul>
 
                 </div>
             </div>
         </div>
-
     </div>
 {% endblock %}

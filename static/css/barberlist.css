@@ -1,0 +1,19 @@
+body{
+    background-image: url("../images/bg.jpg");
+    background-repeat: repeat-x;
+}
+ul{
+    list-style: none;
+}
+
+.trim{
+    color: red;
+}
+
+.title{
+    font-size: 300%;
+    color: white;
+    line-height: 80px;
+    font-family:    Times, Verdana, Helvetica, Arial, sans-serif;
+    font-style: italic;
+}
