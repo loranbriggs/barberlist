@@ -7,19 +7,36 @@
 {% block header %}
 {% endblock %}
 
-{% block content %}
+{% block content_left %}
     Here on this page you will be able to edit the employee list.
-    <ul>
-        <li> Blah </li>
-        {% for object in employees %}
-            <li> {{object.name}} {{object.available}} </li>
-        {% endfor %}
-    </ul>
-
+    Also you will be able to selecet which barbers are available.
+    Unavailable barbers will not appear as an option for new
+    customers to select.
+    <hr>
     <form class="well" method="post" action="./employees">
          {% csrf_token %}
          <input type="text" id="name" name="name" size="20"
             placeholder="enter name">
-         <input type="submit" button class="btn btn-success" value="Add Name" name="submit">
+         <input type="submit" button class="btn btn-info" value="Add Barber" name="submit">
     </form>
+
+{% endblock %}
+
+{% block content_right %}
+    <ul>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        <li> JOHN AVAILABLE</li>
+        {% for object in employees %}
+            <li> {{object.name}} {{object.available}} </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

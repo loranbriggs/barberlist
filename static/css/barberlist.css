@@ -1,19 +1,58 @@
+@font-face{
+    font-family: Gcursive;
+    src: url("../fonts/GCursiv2.ttf");
+}
+
+@font-face{
+    font-family: GcursiveIE;
+    src: url("../fonts/GCursiv2.eot");
+}
+
+
 body{
     background-image: url("../images/bg.jpg");
     background-repeat: repeat-x;
+    text-align: center;
+    margin-top: 1%;
+    font-family:    Verdana, Helvetica, Arial, sans-serif;
+}
+
+
+h1, h3{
+    color: red;
+    padding-bottom: 4%;
 }
 ul{
     list-style: none;
 }
 
+a:link {color:white;}    /* unvisited link */
+a:visited {color:white;} /* visited link */
+a:hover {color:grey;}   /* mouse over link */
+a:active {color:white;}  /* selected link */
+
 .trim{
     color: red;
 }
 
-.title{
-    font-size: 300%;
+.logo{
+    font-size: 500%;
     color: white;
-    line-height: 80px;
+    text-align: center;
+    font-family: Gcursive, GcursiveIE, cursive;
+    font-style: italic;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.padder{
+    padding-bottom: 0%;
+}
+
+.fontt{
     font-family:    Times, Verdana, Helvetica, Arial, sans-serif;
+}
+
+.italic{
     font-style: italic;
 }

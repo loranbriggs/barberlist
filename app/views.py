@@ -37,3 +37,9 @@ def add_employ(request):
             employee.available = 'A'
             employee.save()
     return HttpResponse()
+
+def archive(request):
+    customers = Customers.objects.all()
+    c = {'customers': customers}
+    c.update(csrf(request))
+    return render(request, 'archive.html', c)
