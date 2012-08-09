@@ -1,3 +1,11 @@
+body{
+    background: url(../images/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 @font-face{
     font-family: Gcursive;
     src: url("../fonts/GCursiv2.ttf");
@@ -8,20 +16,44 @@
     src: url("../fonts/GCursiv2.eot");
 }
 
-
-body{
-    background-image: url("../images/bg.jpg");
-    background-repeat: repeat-x;
-    text-align: center;
-    margin-top: 1%;
-    font-family:    Verdana, Helvetica, Arial, sans-serif;
+@font-face{
+    font-family: Annie;
+    src: url("../fonts/AnnieUseYourTelescope.ttf");
 }
 
+@font-face{
+    font-family: AnnieIE;
+    src: url("../fonts/AnnieUseYourTelescope.eot");
+}
+
+
+body{
+    text-align: center;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+form{
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+}
 
 h1, h3{
     color: red;
-    padding-bottom: 4%;
+    font-family: Times, serif;
 }
+
+h4{
+    font-style: italic;
+}
+
+ul, ol{
+    text-align: left;
+}
+
 ul{
     list-style: none;
 }
@@ -30,6 +62,7 @@ a:link {color:white;}    /* unvisited link */
 a:visited {color:white;} /* visited link */
 a:hover {color:grey;}   /* mouse over link */
 a:active {color:white;}  /* selected link */
+
 
 .trim{
     color: red;
@@ -55,4 +88,10 @@ a:active {color:white;}  /* selected link */
 
 .italic{
     font-style: italic;
+}
+
+.well{
+    -webkit-border-radius: 30px;
+       -moz-border-radius: 30px;
+            border-radius: 30px;
 }

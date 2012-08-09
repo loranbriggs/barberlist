@@ -23,20 +23,16 @@
 {% endblock %}
 
 {% block content_right %}
-    <ul>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        <li> JOHN AVAILABLE</li>
-        {% for object in employees %}
-            <li> {{object.name}} {{object.available}} </li>
+    <ul id="employ_list">
+        {% for employ in employees %}
+            <li id="{{employ.id}}" data-available="{{employ.available}}">
+                    {{employ.id}} {{employ.name}} 
+                    {% if employ.available %}
+                        Available
+                    {% else %}
+                        Unavailable
+                    {% endif %}
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

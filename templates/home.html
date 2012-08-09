@@ -8,21 +8,34 @@
 
     <div class="row-fluid">
         <h1>Hey Guys! You need to know this!!</h1>
-        <h4 class="italic">We take our customers in order as they appear on the
+        <p class="italic">We take our customers in order as they appear on the
         waiting list.* <br> If you enter your name below, we will
         add you to the waiting list. <br> If you don’t call ahead
         or enter you name below,<br> add your name to the waiting list
         when you arrive. <br>
         <div class="trim"> *Courtesy neck trims and touch-ups always
-        receive priority service!</div></h4>
+        receive priority service!</div></p>
         <hr>
         <h3> Get Your Name on the List! </h3>
         <form class="well" method="post" action=".">
             {% csrf_token %}
             <input type="text" id="name" name="name" size="20"
                 placeholder="enter name">
+            <input type="checkbox" id="trim" name="trim" value="True" /> Trim
             <input type="submit" button class="btn btn-info" 
                 value="Add Name" name="submit">
+            <br>
+            Availabe Barbers:
+            <ul>
+                {% for employ in employees %}
+                    {% if employ.available %}
+                    <li><input type='radio' id='barber' name='barber' value='{{employ.name}}'>
+                        {{employ.name}}</li>
+                    {% endif %}
+                {% endfor %}
+                    <li><input type='radio' name='barber' value="no pref" checked>
+                        no preference
+            </ul>
         </form>
     </div>
 {% endblock %}
@@ -30,150 +43,24 @@
 {% block content_right %}
     <div class="row-fluid">
         <div class="row-fluid show-grid">
-            <div class="span6">
+            <div class="span2">
                 <ol>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                        <li>LORAN</li>
-                    {% for object in customers %}
-                        <li>{{object.name}} </li>
+                    {% for customer in customers %}
+                        {% if customer.trim %}
+                            <li class="trim">
+                        {% else %}
+                            <li>
+                        {% endif %}
+                        {{customer.name}} </li>
                     {% endfor %}
                 </ol>
 
             </div>
-            <div class="span6">
+            <div class="span1"> </div>
+            <div class="span3">
                 <ul>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                        <li>JOHN</li>
-                    {% for object in customers %}
-                        <li>{{object.barber}} </li>
+                    {% for customer in customers %}
+                        <li>{{customer.barber}} </li>
                     {% endfor %}
                 </ul>
 
